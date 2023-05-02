@@ -1,9 +1,11 @@
 const express = require("express");
 const env = require("env2")("./.env");
 const app = express();
+const cors = require("cors");
 const { Auth } = require("./Middleware/Auth.js");
 const { connection } = require("./db.js");
 app.use(express.json());
+app.use(cors);
 const userRouter = require("./Routes/userRoutes.js");
 const postRouter = require("./Routes/PostRoutes.js");
 
